@@ -33,7 +33,6 @@ docker run -it --rm \
 echo "Starting the database server"
 docker run -d \
    --volume=`pwd`/data:/data \
-   --volume=`pwd`/graph-import-files:/imports \
    --volume=`pwd`/logs:/logs \
    --env=NEO4J_AUTH=neo4j/test \
    -p 7474:7474 -p 7687:7687 \
