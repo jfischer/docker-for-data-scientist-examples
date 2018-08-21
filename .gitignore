@@ -1,0 +1,8 @@
+/.idea
+*/.ipynb_checkpoints
+workflow-3a/MNIST_data
+workflow-3a/TensorFlow-Examples
+workflow-4/data
+workflow-4/logs
+
+.gitignore

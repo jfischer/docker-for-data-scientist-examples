@@ -4,6 +4,8 @@ set -e
 echo docker pull tensorflow/tensorflow
 docker pull tensorflow/tensorflow
 
+mkdir notebooks
+
 echo docker build -t pybay-workflow-3a .
 docker build -t pybay-workflow-3a .
 

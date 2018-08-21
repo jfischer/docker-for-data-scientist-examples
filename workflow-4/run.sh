@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-echo docker pull neo4j:3.4
-docker pull neo4j:3.4
+echo docker pull neo4j:latest
+docker pull neo4j:latest
 
 echo "(re)creating data and log directories"
 rm -rf ./data ./logs
@@ -24,9 +24,9 @@ popd
 
 echo "Running the database import"
 echo 'docker run -it --rm \'
-echo '  --volume=`pwd`/data:/data \'
-echo '  --volume=`pwd`/graph-import-files:/imports \'
-echo '  --volume=`pwd`/logs:/logs \'
+echo '  --volume="$(pwd)"/data:/data \'
+echo '  --volume="$(pwd)"/graph-import-files:/imports \'
+echo '  --volume="$(pwd)"/logs:/logs \'
 echo '  --env=NEO4J_AUTH=neo4j/test \'
 echo '  neo4j:3.4 bin/neo4j-admin import \'
 echo '    $NODES_ARGS \'
@@ -40,15 +40,13 @@ docker run -it --rm \
 
 echo "Starting the database server"
 echo 'docker run -d \'
-echo '   --volume=`pwd`/data:/data \'
-echo '   --volume=`pwd`/logs:/logs \'
+echo '   --volume="$(pwd)"/data:/data \'
+echo '   --volume="$(pwd)"/logs:/logs \'
 echo '   --env=NEO4J_AUTH=neo4j/test \'
 echo '   -p 7474:7474 -p 7687:7687 \'
-echo '   --name pybay-neo4j neo4j:3.4'
-docker run -d \
-   --volume=`pwd`/data:/data \
-   --volume=`pwd`/logs:/logs \
-   --env=NEO4J_AUTH=neo4j/test \
-   -p 7474:7474 -p 7687:7687 \
-   --name pybay-neo4j neo4j:3.4 
+echo '   --name pybay-neo4j neo4j:latest'
+echo ' '
+echo 'now go to:  http://127.0.0.1:7474  and log in, username: neo4j / pass_word = test
+
+# one line command:  docker run -it -d --volume="$(pwd)"/data:/data --volume="$(pwd)"/logs:/logs --env=NEO4J_AUTH=neo4j/test -p 7474:7474 -p 7687:7687 --name pybay-neo4j neo4j:latest
 
