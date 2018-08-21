@@ -8,7 +8,7 @@ slides are available in PDF form `here <https://github.com/jfischer/docker-for-d
 
 Example Format
 --------------
-Each example has a ``README.txt`` file that explains the example, and a ``run.sh`` bash script
+Each example has a ``README.txt`` file that explains the example and a ``run.sh`` bash script
 that will pull the base Docker image, build the image for the example, and run the container.
 
 Most examples have a ``Dockerfile`` defining how to build the image. Those that leave containers
@@ -19,6 +19,7 @@ Contents
 Here is a short explanation of each specific example:
 
 * ``workflow-1`` — run a machine learning script inside a container
+* ``pitfall-1`` — example of an anti-pattern: containers with mutable state inside
 * ``workflow-2a`` — mount the current directory inside a container and run an interactive shell
 * ``workflow-2b`` — example of user mapping with the ``docker run`` command
 * ``workflow-3a`` — run TensorFlow and Jupyter in a detached container
