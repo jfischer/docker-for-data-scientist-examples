@@ -20,7 +20,7 @@ Here is a short explanation of each specific example:
 
 * ``1-run-script`` — run a machine learning script inside a container
 * ``2-pitfall-local-state`` — example of an anti-pattern: containers with mutable state inside
-* ``workflow-2a`` — mount the current directory inside a container and run an interactive shell
+* ``3-mount-local-fs`` - mount the host filesystem inside the container
 * ``workflow-2b`` — example of user mapping with the ``docker run`` command
 * ``workflow-3a`` — run TensorFlow and Jupyter in a detached container
 * ``workflow-3b`` — run the GPU-enabled version of TensorFlow in a detached container
