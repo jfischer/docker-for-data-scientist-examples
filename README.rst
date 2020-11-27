@@ -18,8 +18,8 @@ Contents
 --------
 Here is a short explanation of each specific example:
 
-* ``workflow-1`` — run a machine learning script inside a container
-* ``pitfall-1`` — example of an anti-pattern: containers with mutable state inside
+* ``1-run-script`` — run a machine learning script inside a container
+* ``2-pitfall-local-state`` — example of an anti-pattern: containers with mutable state inside
 * ``workflow-2a`` — mount the current directory inside a container and run an interactive shell
 * ``workflow-2b`` — example of user mapping with the ``docker run`` command
 * ``workflow-3a`` — run TensorFlow and Jupyter in a detached container
