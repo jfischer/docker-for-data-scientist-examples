@@ -24,6 +24,7 @@ Here is a short explanation of each specific example:
 * ``4-map-user`` - map the host user into the container
 * ``5-tensorflow-notebook`` - run TensorFlow and Jupyter in a detached container.
   We can switch between cpu and gpu execution by just changing the image name.
-* ``workflow-4`` — load and run a Neo4j database
+* `6-neo4j-database`` — load and run a Neo4j database
+* ``7-data-workspaces`` - manage a project as a workspace
 
 For a full explanation of all the examples, see my blog series at https://data-ken.org/docker-for-data-scientists-part1.html.

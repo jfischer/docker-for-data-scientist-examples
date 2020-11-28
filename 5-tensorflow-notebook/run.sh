@@ -3,13 +3,13 @@ set -e
 if [[ "$1" == "gpu" ]]; then
   echo IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
   IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
-  echo CONTAINER=pydata-5-gpu-container
-  CONTAINER=pydata-5-gpu-container
+  echo CONTAINER=dds-5-gpu-container
+  CONTAINER=dds-5-gpu-container
 else  
   echo IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
   IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
-  echo CONTAINER=pydata-5-cpu-container
-  CONTAINER=pydata-5-cpu-container
+  echo CONTAINER=dds-5-cpu-container
+  CONTAINER=dds-5-cpu-container
 fi
 
 echo docker pull \$IMAGE

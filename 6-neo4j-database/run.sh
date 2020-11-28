@@ -44,9 +44,9 @@ echo '   --volume="$(pwd)"/data:/data \'
 echo '   --volume="$(pwd)"/logs:/logs \'
 echo '   --env=NEO4J_AUTH=neo4j/test \'
 echo '   -p 7474:7474 -p 7687:7687 \'
-echo '   --name pybay-neo4j neo4j:latest'
+echo '   --name dds-neo4j neo4j:latest'
 echo ' '
 echo 'now go to:  http://127.0.0.1:7474  and log in, username: neo4j / pass_word = test
 
-# one line command:  docker run -it -d --volume="$(pwd)"/data:/data --volume="$(pwd)"/logs:/logs --env=NEO4J_AUTH=neo4j/test -p 7474:7474 -p 7687:7687 --name pybay-neo4j neo4j:latest
+# one line command:  docker run -it -d --volume="$(pwd)"/data:/data --volume="$(pwd)"/logs:/logs --env=NEO4J_AUTH=neo4j/test -p 7474:7474 -p 7687:7687 --name dds-neo4j neo4j:latest
 
