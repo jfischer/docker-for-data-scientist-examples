@@ -16,6 +16,7 @@ echo docker pull \$IMAGE
 docker pull $IMAGE
 
 echo docker run -d -p 8888:8888 -u \`id -u\`:\`id -g\` --name \$CONTAINER \$IMAGE
-docker run -d -p 8888:8888 -u `id -u`:`id -g` -v `pwd`:/tf/5a-tensorflow-data --name $CONTAINER $IMAGE
+docker run -d -p 8888:8888 -u `id -u`:`id -g` -v `pwd`:/tf/5-tensorflow-notebook --name $CONTAINER $IMAGE
+echo "The contain should now be started in the background. Will now tail the log from the container..."
 echo docker logs -f \$CONTAINER
 docker logs -f $CONTAINER
