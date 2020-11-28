@@ -21,9 +21,9 @@ Here is a short explanation of each specific example:
 * ``1-run-script`` — run a machine learning script inside a container
 * ``2-pitfall-local-state`` — example of an anti-pattern: containers with mutable state inside
 * ``3-mount-local-fs`` - mount the host filesystem inside the container
-* ``workflow-2b`` — example of user mapping with the ``docker run`` command
-* ``workflow-3a`` — run TensorFlow and Jupyter in a detached container
-* ``workflow-3b`` — run the GPU-enabled version of TensorFlow in a detached container
+* ``4-map-user`` - map the host user into the container
+* ``5-tensorflow-notebook`` - run TensorFlow and Jupyter in a detached container.
+  We can switch between cpu and gpu execution by just changing the image name.
 * ``workflow-4`` — load and run a Neo4j database
 
 For a full explanation of all the examples, see my blog series at https://data-ken.org/docker-for-data-scientists-part1.html.

@@ -14,13 +14,13 @@ fi
 echo docker pull continuumio/anaconda3
 docker pull continuumio/anaconda3
 
-echo docker build -t pybay-workflow-2b .
-docker build -t pybay-workflow-2b .
+echo docker build -t pydata-4-map-user .
+docker build -t pydata-4-map-user .
 
 echo "Entering docker shell, type \"exit\" to return back to host shell"
 echo docker run -it --rm --userns=host -u `id -u`:`id -g` \\
 echo     -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro \\
-echo     -v `pwd`:/host pybay-workflow-2b:latest /bin/bash
+echo     -v `pwd`:/host pydata-4-map-user:latest /bin/bash
 docker run -it --rm --userns=host -u `id -u`:`id -g` \
     -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro \
-    -v `pwd`:/host pybay-workflow-2b:latest /bin/bash
+    -v `pwd`:/host pydata-4-map-user:latest /bin/bash
