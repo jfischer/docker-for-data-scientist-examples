@@ -28,3 +28,7 @@ Here is a short explanation of each specific example:
 * ``7-data-workspaces`` - manage a project as a workspace
 
 For a full explanation of all the examples, see my blog series at https://data-ken.org/docker-for-data-scientists-part1.html.
+
+November 2020 Note
+------------------
+These examples are in the process of being reworked for an upcoming book. Stay tuned
