@@ -12,11 +12,19 @@ else
   CONTAINER=dds-5-cpu-container
 fi
 
-echo docker pull \$IMAGE
+echo docker pull $IMAGE
 docker pull $IMAGE
 
-echo docker run -d -p 8888:8888 -u \`id -u\`:\`id -g\` --name \$CONTAINER \$IMAGE
-docker run -d -p 8888:8888 -u `id -u`:`id -g` -v `pwd`:/tf/5-tensorflow-notebook --name $CONTAINER $IMAGE
+if [[ `uname` == Linux ]]; then
+  USER_MAPPING_OPTS="-u `id -u`:`id -g`"
+  echo "Mapping user and group into container"
+else
+  USER_MAPPING_OPTS=""
+  echo "No user mapping needed"
+fi
+
+echo docker run -d -p 8888:8888 $USER_MAPPING_OPTS --name $CONTAINER $IMAGE
+docker run -d -p 8888:8888 $USER_MAPPING_OPTS -v `pwd`:/tf/5-tensorflow-notebook --name $CONTAINER $IMAGE
 echo "The contain should now be started in the background. Will now tail the log from the container..."
 echo docker logs -f \$CONTAINER
 docker logs -f $CONTAINER
