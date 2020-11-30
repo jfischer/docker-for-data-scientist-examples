@@ -6,9 +6,21 @@ Run a Jupyter notebook for deep learning in a TensorFlow container. Example
 from https://www.tensorflow.org/tutorials/keras/classification. We use
 one of the pre-built Docker images from TensorFlow.
 
+This runs either on the CPU or the GPU. To run on your GPU, you need
+to have a Linux system with an NVIDIA GPU, the NVIDIA drivers for your
+card installed (see https://www.nvidia.com/Download/index.aspx?lang=en-us
+to download and install),, and The NVIDIA container toolkit installed
+(see https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker).
+If you happen to be running PopOS, you can install the NVIDIA container
+toolkit directly, via the command::
+
+  sudo apt install nvidia-container-runtime
+
 Scripts
 -------
-There are two shell scripts in this directory:
+There are three shell scripts in this directory:
+ * test_gpu.sh pulls a GPU-enabled container created by NVIDIA and attempts
+   to run the ``nvidia-smi`` command within the container.
  * run.sh builds and runs the notebook in detached mode. By default, it runs
    using the CPU. For running on the GPU, add "gpu" as a command line
    argument. The GPU is only supported on Linux systems with an NVIDIA
@@ -45,7 +57,10 @@ Once you have opened your URL, Jupyter should display two folders:
 
 The notebooks in both of these directories should work. Note that only the
 ``5-tensorflow-notebook`` directory is mapped to the host. That means changes to
-``tensorflow-tutorials`` will note be visible outside the container.
+``tensorflow-tutorials`` will not be visible outside the container.  
+Futhermore, under Linux, user mapping will cause all directories other than
+the host mounted directory (``5-tensorflow-notebook`` to be read-only.
+This is because the TensorFlow filesystem was created using a ``root`` user.
 
 Lifetime of the Container
 -------------------------
