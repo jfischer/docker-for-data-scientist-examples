@@ -1,8 +1,7 @@
-#!/bin/bash
 set -e
 
 echo -n  "Checking this is Linux..."
-if [[ `uname` == Linux ]]; then
+if [ `uname` = Linux ]; then
   echo 'ok'
 else
   echo 'no'
