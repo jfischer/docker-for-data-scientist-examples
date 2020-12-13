@@ -4,7 +4,7 @@ if [ "$1" = "gpu" ]; then
     echo "GPU option only supported with Linux"
     exit 1
    fi
-  if [ `nvidia-smi`  = "" ]; then
+  if [ "`which nvidia-smi`" = "" ]; then
     echo "WARNING: nvidia-smi not found. Do you have your system correctly configured with an NVIDIA GPU?"
   fi  
   echo IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
