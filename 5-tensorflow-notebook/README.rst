@@ -21,9 +21,9 @@ Scripts
 There are three shell scripts in this directory:
  * test_gpu.sh pulls a GPU-enabled container created by NVIDIA and attempts
    to run the ``nvidia-smi`` command within the container.
- * run.sh builds and runs the notebook in detached mode. By default, it runs
-   using the CPU. For running on the GPU, add "gpu" as a command line
-   argument. The GPU is only supported on Linux systems with an NVIDIA
+ * run.sh builds and runs the notebook in detached mode. It takes one command
+   line argument, either "cpu" or "gpu".
+   . The GPU is only supported on Linux systems with an NVIDIA
    GPU and the appropriate drivers installed (run "nvidia-smi" to verify
    that things are correctly configured on your host system).
  * cleanup.sh deletes the container, if present, even if it is running

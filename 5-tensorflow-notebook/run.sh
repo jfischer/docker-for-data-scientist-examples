@@ -1,16 +1,28 @@
 set -e
 if [ "$1" = "gpu" ]; then
+  if [ `uname` != "Linux" ]; then
+    echo "GPU option only supported with Linux"
+    exit 1
+   fi
+  if [ `nvidia-smi`  = "" ]; then
+    echo "WARNING: nvidia-smi not found. Do you have your system correctly configured with an NVIDIA GPU?"
+  fi  
   echo IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
   IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
   echo CONTAINER=dds-5-gpu-container
   CONTAINER=dds-5-gpu-container
   RUNTIME_OPTS="--runtime=nvidia"
 else  
-  echo IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
-  IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
-  echo CONTAINER=dds-5-cpu-container
-  CONTAINER=dds-5-cpu-container
-  RUNTIME_OPTS=""
+  if [ "$1" = "cpu" ]; then
+    echo IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
+    IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
+    echo CONTAINER=dds-5-cpu-container
+    CONTAINER=dds-5-cpu-container
+    RUNTIME_OPTS=""
+  else
+    echo "ERROR: Missing or invalid argument. Please specify either cpu or gpu."   
+    exit 1
+  fi
 fi
 
 echo docker pull $IMAGE
