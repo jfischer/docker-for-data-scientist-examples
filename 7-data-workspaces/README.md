@@ -10,7 +10,8 @@ which includes raw source data, transformed data, experimental results, and all 
 Given a data workspace published on GitHub, we can get an environment running under Docker with the
 following steps (in `run.sh`):
 
-1. Make sure Data Workspaces is installed in our environment. If not install it via `pip`
+1. Make sure Data Workspaces is installed in our environment. If not, create a virtual
+   environment and install Data Workspaces it via `pip`.
 2. Run the `dws clone` command to copy and initialize the project
 3. Build a container for the project via `dws deploy build`. This calls `repo2docker`
    under the covers.
@@ -21,7 +22,7 @@ A Jupyter notebook is now available at the URL printed by the container.
 By default, the container created by Data Workspaces is designed to be a
 self-contained environment for both running experiements and updating the
 central repository. As such, the files for the workspace are inside the
-container (rather than mounted from the host) and the user's local ssh keys
-are mounted in the container (for Git authorization).
+container (rather than mounted from the host). The user's local ssh keys
+can be mounted in the container (for Git authorization).
 
 
