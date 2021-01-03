@@ -1,6 +1,3 @@
-#!/bin/bash
-set -e
-
 echo docker pull continuumio/anaconda3
 docker pull continuumio/anaconda3
 
