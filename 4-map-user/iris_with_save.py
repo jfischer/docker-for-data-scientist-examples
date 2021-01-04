@@ -4,7 +4,7 @@
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn import svm
-from sklearn.externals import joblib
+import joblib
 import json
 
 # load the data

@@ -17,9 +17,5 @@ echo docker build -t dds-4-map-user .
 docker build -t dds-4-map-user .
 
 echo "Entering docker shell, type \"exit\" to return back to host shell"
-echo docker run -it --rm --userns=host -u `id -u`:`id -g` \\
-echo     -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro \\
-echo     -v `pwd`:/host dds-4-map-user:latest /bin/bash
-docker run -it --rm --userns=host -u `id -u`:`id -g` \
-    -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro \
-    -v `pwd`:/host dds-4-map-user:latest /bin/bash
+echo docker run -it --rm -v `pwd`:/host -u `id -u`:`id -g` dds-4-map-user:latest /bin/bash
+docker run -it --rm -v `pwd`:/host -u `id -u`:`id -g` dds-4-map-user:latest /bin/bash
