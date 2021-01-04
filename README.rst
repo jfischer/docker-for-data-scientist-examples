@@ -8,11 +8,16 @@ slides are available in PDF form `here <https://github.com/jfischer/docker-for-d
 
 Example Format
 --------------
-Each example has a ``README.txt`` file that explains the example and a ``run.sh`` bash script
+Each example has a ``README.txt`` file that explains the example and a ``run.sh`` script
 that will pull the base Docker image, build the image for the example, and run the container.
+To run each script on MacOS or Linux, change into the example's directory and run::
 
-Most examples have a ``Dockerfile`` defining how to build the image. Those that leave containers
-running have a ``cleanup.sh`` script to delete the containers.
+  sh run.sh
+
+Most examples have a ``Dockerfile`` defining how to build the image. Examples
+that leave containers
+running or create new files in the local directory also have a ``cleanup.sh`` script to 
+restore back to the original state.
 
 Contents
 --------
@@ -24,7 +29,7 @@ Here is a short explanation of each specific example:
 * ``4-map-user`` - map the host user into the container
 * ``5-tensorflow-notebook`` - run TensorFlow and Jupyter in a detached container.
   We can switch between cpu and gpu execution by just changing the image name.
-* `6-neo4j-database`` — load and run a Neo4j database
+* ``6-neo4j-database`` — load and run a Neo4j database
 * ``7-data-workspaces`` - manage a project as a workspace
 
 For a full explanation of all the examples, see my blog series at https://data-ken.org/docker-for-data-scientists-part1.html.
