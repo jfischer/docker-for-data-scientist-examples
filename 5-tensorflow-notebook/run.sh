@@ -11,7 +11,8 @@ if [ "$1" = "gpu" ]; then
   IMAGE=tensorflow/tensorflow:nightly-gpu-jupyter
   echo CONTAINER=dds-5-gpu-container
   CONTAINER=dds-5-gpu-container
-  RUNTIME_OPTS="--runtime=nvidia"
+  #RUNTIME_OPTS="--runtime=nvidia"
+  RUNTIME_OPTS="--gpus=all"
 else  
   if [ "$1" = "cpu" ]; then
     echo IMAGE=tensorflow/tensorflow:nightly-py3-jupyter
