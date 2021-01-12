@@ -1,5 +1,5 @@
-7. Data Workspaces
-==================
+# 7. Data Workspaces
+
 In this example, we show how the [Data Workspaces](https://dataworkspaces.ai) platform
 can be used to manage data science projects, including experiment tracking, reporting,
 collaboration, and deployment.
